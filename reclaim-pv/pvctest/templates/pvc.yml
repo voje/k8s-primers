@@ -1,0 +1,18 @@
+# Prerequisite: local-path storage class
+# SC Reclaim Policy: Retain recommended
+---
+{{- if .Values.createPvc }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "{{ .Values.claimName }}"
+  annotations:
+    "helm.sh/resource-policy": keep   # <-- This part keeps our data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Mi
+  storageClassName: "{{ .Values.storageClass }}"
+{{- end }}

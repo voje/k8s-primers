@@ -1,0 +1,15 @@
+# Modify volumeName to re-create PVC
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+  name: pvc-one
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Mi
+  storageClassName: local-path
+  volumeName: pvc-b30ae21e-ceb1-42f0-a42c-a60ef1f16788

@@ -1,0 +1,4 @@
+---
+createPvc: true
+claimName: "pvc-one"
+storageClass: "local-path"
