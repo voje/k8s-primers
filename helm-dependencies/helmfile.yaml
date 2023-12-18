@@ -1,0 +1,9 @@
+---
+releases:
+  - name: rel-chart-a
+    namespace: default
+    chart: ./chart-a
+    dependencies:
+      - chart: ./postgresql
+        version: 0.1.0
+        alias: postgresql
